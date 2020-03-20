@@ -296,3 +296,18 @@
 # from itertools import combinations_with_replacement
 # p = input().split()
 # print(*[''.join(i) for i in combinations_with_replacement(sorted(p[0]),int(p[1]))],sep = '\n')
+################################################################################
+                                      #Q
+################################################################################
+# compress-the-string-English
+################################################################################
+                                     #A
+################################################################################
+# from itertools import groupby
+# p = input()
+# groups = [list(g) for k, g in groupby(p)]
+# keys = [k for k, g in groupby(p)]
+# gr_len = [len(i) for i in groups]
+# print(*tuple(zip(gr_len,map(int,keys))))
+#
+# print(*tuple(zip(list(map(len,(list(g) for k, g in groupby(p)))),map(int,[k for k, g in groupby(p)]))))
