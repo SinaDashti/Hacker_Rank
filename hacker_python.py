@@ -544,29 +544,41 @@
 ################################################################################
                                      #A
 ################################################################################
-from collections import defaultdict
-
-d = defaultdict(list)
-n, m = map(int, input().split())
-A, B = [input() for _ in range(n)], [input() for _ in range(m)]
-for idx, val in enumerate(A, start = 1):
-    d[val].append(idx)
-for key in B:
-    if key in d.keys():
-        print(*d[key])
-    else:
-        print('-1')
+# from collections import defaultdict
+#
+# d = defaultdict(list)
+# n, m = map(int, input().split())
+# A, B = [input() for _ in range(n)], [input() for _ in range(m)]
+# for idx, val in enumerate(A, start = 1):
+#     d[val].append(idx)
+# for key in B:
+#     if key in d.keys():
+#         print(*d[key])
+#     else:
+#         print('-1')
 ################################################################################
 # or for the last for
-for key in B:
-    print(*d[key] or -1)
+# for key in B:
+#     print(*d[key] or -1)
 ################################################################################
 # without enuemarte and creating A and B
-for i in range(n):
-    d[input()].append(i + 1)
-
-for _ in range(m):
-    print(' '.join(map(str, d[input()])) or -1)
+# for i in range(n):
+#     d[input()].append(i + 1)
+#
+# for _ in range(m):
+#     print(' '.join(map(str, d[input()])) or -1)
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# py-collections-namedtuple-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+from collections  import namedtuple
+N, Student =int(input()), namedtuple('Student',input().split())
+print('%.2f' %float(sum(list(map(int,[Student._make(input().split()).MARKS for _ in range(N)])))/N))
 ################################################################################
 ################################################################################
                                       #Q
