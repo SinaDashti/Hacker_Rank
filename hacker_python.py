@@ -576,14 +576,47 @@
 ################################################################################
                                      #A
 ################################################################################
-from collections  import namedtuple
-N, Student =int(input()), namedtuple('Student',input().split())
-print('%.2f' %float(sum(list(map(int,[Student._make(input().split()).MARKS for _ in range(N)])))/N))
+# from collections  import namedtuple
+# N, Student =int(input()), namedtuple('Student',input().split())
+# print('%.2f' %float(sum(list(map(int,[Student._make(input().split()).MARKS for _ in range(N)])))/N))
 ################################################################################
 ################################################################################
                                       #Q
 ################################################################################
-# 
+# py-collections-ordereddict-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+from collections  import OrderedDict
+
+od = OrderedDict()
+for _ in range(int(input())):
+    temp = input().split()
+    if ' '.join(temp[0:-1]) not in od.keys():
+        od[' '.join(temp[0:-1])] = int(temp[-1])
+    else:
+        od[' '.join(temp[0:-1])] += int(temp[-1])
+print('\n'.join([k + ' ' + str(v) for k,v in od.items()]))
+################################################################################
+# d = OrderedDict()
+# for _ in range(int(input())):
+#     item, space, quantity = input().rpartition(' ')
+#     d[item] = d.get(item, 0) + int(quantity)
+# for item, quantity in d.items():
+#     print(item, quantity)
+################################################################################
+# dct = OrderedDict()
+# for _ in range(int(input())):
+#     i = input().rpartition(" ")
+#     dct[i[0]] = int(i[-1]) + dct[i[0]] if i[0] in dct else int(i[-1])
+# for l in dct:
+#     print(l, dct[l])
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+#
 ################################################################################
 ################################################################################
                                      #A
