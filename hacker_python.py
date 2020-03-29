@@ -588,16 +588,16 @@
 ################################################################################
                                      #A
 ################################################################################
-from collections  import OrderedDict
-
-od = OrderedDict()
-for _ in range(int(input())):
-    temp = input().split()
-    if ' '.join(temp[0:-1]) not in od.keys():
-        od[' '.join(temp[0:-1])] = int(temp[-1])
-    else:
-        od[' '.join(temp[0:-1])] += int(temp[-1])
-print('\n'.join([k + ' ' + str(v) for k,v in od.items()]))
+# from collections  import OrderedDict
+#
+# od = OrderedDict()
+# for _ in range(int(input())):
+#     temp = input().split()
+#     if ' '.join(temp[0:-1]) not in od.keys():
+#         od[' '.join(temp[0:-1])] = int(temp[-1])
+#     else:
+#         od[' '.join(temp[0:-1])] += int(temp[-1])
+# print('\n'.join([k + ' ' + str(v) for k,v in od.items()]))
 ################################################################################
 # d = OrderedDict()
 # for _ in range(int(input())):
@@ -616,8 +616,28 @@ print('\n'.join([k + ' ' + str(v) for k,v in od.items()]))
 ################################################################################
                                       #Q
 ################################################################################
-#
+# py-collections-deque-English
 ################################################################################
 ################################################################################
                                      #A
+################################################################################
+from collections import deque
+d = deque()
+for _ in range(int(input())):
+    temp = input().split()
+    if 'append' in temp[0]:
+        eval('d.{}({})'.format(temp[0], temp[1]))
+    else:
+        eval('d.{}()'.format(temp[0]))
+
+    # eval('d.{}({})'.format(temp[0], temp[1])) if 'append' in temp[0] else eval('d.{}()'.format(temp[0]))
+print(*d)
+################################################################################
+# from collections import deque
+# d = deque()
+# for _ in range(int(input())):
+#     cmd, *args = input().split()
+#     getattr(d, cmd)(*args)
+#     # getattr(d, command)(*map(int, args))
+# [print(x, end=' ') for x in d]
 ################################################################################
