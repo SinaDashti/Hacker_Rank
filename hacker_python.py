@@ -779,16 +779,25 @@
 ################################################################################
                                      #A
 ################################################################################
-A = set(input().split())
-print(all([A.issuperset(input().split()) for _ in range(int(input()))]))
+# A = set(input().split())
+# print(all([A.issuperset(input().split()) for _ in range(int(input()))]))
 ################################################################################
-a = set(input().split())
-print(all(a > set(input().split()) for _ in range(int(input()))))
+# a = set(input().split())
+# print(all(a > set(input().split()) for _ in range(int(input()))))
 ################################################################################
                                       #Q
 ################################################################################
-# 
+# Polar-Coordinates
 ################################################################################
 ################################################################################
                                      #A
 ################################################################################
+from cmath import polar
+z = input()
+print('{:.3f}\n{:.3f}'.format(abs(complex(z)),phase(complex(z))))
+
+from cmath import polar
+print '{}\n{}'.format(*polar(complex(input())))
+
+import cmath
+print(*cmath.polar(complex(input())), sep='\n')
