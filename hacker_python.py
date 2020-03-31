@@ -736,7 +736,27 @@
 ################################################################################
                                      #A
 ################################################################################
-_, a = input(), set(map(int, input().split()))
-for i in range(int(input())):
-    eval('a.{}({})'.format(input().split()[0], set(map(int, input().split()))))
-print(sum(a))
+# _, a = input(), set(map(int, input().split()))
+# for i in range(int(input())):
+#     eval('a.{}({})'.format(input().split()[0], set(map(int, input().split()))))
+# print(sum(a))
+################################################################################
+                                      #Q
+################################################################################
+# py-the-captains-room-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+_, args = input(), input().split()
+print(*[i for i in set(sorted(args)) if args.count(i) == 1])
+################################################################################
+members = input().split()
+rooms = set()   # Contains all the rooms.
+room_more_mem = set()   # Contains only the rooms with families.
+
+for m in members:
+    if m not in room_more_mem:
+        target = room_more_mem if m in rooms else rooms
+        target.add(m)
+print(rooms.difference(room_more_mem).pop())
