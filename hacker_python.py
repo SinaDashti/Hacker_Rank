@@ -867,15 +867,15 @@
 ################################################################################
                                      #A
 ################################################################################
-import re
-for i in [input() for i in range(int(input()))]:
-    try:
-        re.compile(i)
-        print(True)
-    except Exception:
-        print(False)
-
-cube = lambda x: x**3
+# import re
+# for i in [input() for i in range(int(input()))]:
+#     try:
+#         re.compile(i)
+#         print(True)
+#     except Exception:
+#         print(False)
+#
+# cube = lambda x: x**3
 ################################################################################
                                       #Q
 ################################################################################
@@ -884,13 +884,43 @@ cube = lambda x: x**3
 ################################################################################
                                      #A
 ################################################################################
-def fibonacci(n):
-    # return a list of fibonacci numbers
-    lis = [0,1]
-    for i in range(2,n):
-        lis.append(lis[i-2] + lis[i-1])
-    return(lis[0:n])
-
-if __name__ == '__main__':
-    n = int(input())
-    print(list(map(cube, fibonacci(n))))
+# cube = lambda x: x**3
+# def fibonacci(n):
+#     # return a list of fibonacci numbers
+#     lis = [0,1]
+#     for i in range(2,n):
+#         lis.append(lis[i-2] + lis[i-1])
+#     return(lis[0:n])
+#
+# if __name__ == '__main__':
+#     n = int(input())
+#     print(list(map(cube, fibonacci(n))))
+################################################################################
+                                      #Q
+################################################################################
+# zipped-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+N, X = map(int,input().split())
+l = [list(zip([i+1 for i in range(N)],input().split())) for mark in range(X)]
+for student in range(N):
+    s = 0
+    for subject in range(X):
+        s += float(l[subject][student][1])
+    print('{:.1f}'.format(s/X))
+################################################################################
+n, x = map(int, input().split())
+sheet = []
+for _ in range(x):
+    sheet.append( map(float, input().split()) )
+for i in zip(*sheet):
+    print( sum(i)/len(i) )
+################################################################################
+_, X = map(int,input().split())
+sheet = [map(float, input().split()) for _ in range(X)]
+print(*[sum(i)/len(i) for i in zip(*sheet)], sep = '\n')
+################################################################################
+[print(sum(i) / len(i)) for i in zip(*[map(float, input().split()) for _ in range(int(input().split()[1]))])]
+################################################################################
