@@ -903,24 +903,34 @@
 ################################################################################
                                      #A
 ################################################################################
-N, X = map(int,input().split())
-l = [list(zip([i+1 for i in range(N)],input().split())) for mark in range(X)]
-for student in range(N):
-    s = 0
-    for subject in range(X):
-        s += float(l[subject][student][1])
-    print('{:.1f}'.format(s/X))
+# N, X = map(int,input().split())
+# l = [list(zip([i+1 for i in range(N)],input().split())) for mark in range(X)]
+# for student in range(N):
+#     s = 0
+#     for subject in range(X):
+#         s += float(l[subject][student][1])
+#     print('{:.1f}'.format(s/X))
 ################################################################################
-n, x = map(int, input().split())
-sheet = []
-for _ in range(x):
-    sheet.append( map(float, input().split()) )
-for i in zip(*sheet):
-    print( sum(i)/len(i) )
+# n, x = map(int, input().split())
+# sheet = []
+# for _ in range(x):
+#     sheet.append( map(float, input().split()) )
+# for i in zip(*sheet):
+#     print( sum(i)/len(i) )
 ################################################################################
-_, X = map(int,input().split())
-sheet = [map(float, input().split()) for _ in range(X)]
-print(*[sum(i)/len(i) for i in zip(*sheet)], sep = '\n')
+# _, X = map(int,input().split())
+# sheet = [map(float, input().split()) for _ in range(X)]
+# print(*[sum(i)/len(i) for i in zip(*sheet)], sep = '\n')
 ################################################################################
-[print(sum(i) / len(i)) for i in zip(*[map(float, input().split()) for _ in range(int(input().split()[1]))])]
+# [print(sum(i) / len(i)) for i in zip(*[map(float, input().split()) for _ in range(int(input().split()[1]))])]
 ################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# input
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+x, k = map(int,input().split())
+print(eval(input()) == k)
