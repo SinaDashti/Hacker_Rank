@@ -1036,10 +1036,21 @@
 ################################################################################
                                      #A
 ################################################################################
-from re import compile
-data, pattern = input(), compile( input() )
-m = pattern.search(data)
-if not m : print("(-1, -1)")
-while m: # the easier 'f' formatting new in Python3
-    print(f"({m.start()}, {m.end() - 1})")
-    m = pattern.search( data, m.start() + 1)
+# from re import compile
+# data, pattern = input(), compile( input() )
+# m = pattern.search(data)
+# if not m : print("(-1, -1)")
+# while m:
+#     print(f"({m.start()}, {m.end() - 1})")
+#     m = pattern.search( data, m.start() + 1)
+################################################################################
+                                      #Q
+################################################################################
+# validate-a-roman-number-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+import re
+regex_pattern = r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+print(str(bool(re.match(regex_pattern, input()))))
