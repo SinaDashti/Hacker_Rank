@@ -1116,26 +1116,57 @@
 ################################################################################
                                      #A
 ################################################################################
-from html.parser import HTMLParser
-
-class MyHTMLParser(HTMLParser):
-    def handle_starttag(self, tag, attrs):
-        print ('{:6}: {}'.format('Start', tag))
-        temp = dict(attrs)
-        for k, v in temp.items():
-            print ("-> " + k + " > " + str(v))
-
-    def handle_endtag(self, tag):
-        print ('{:6}: {}'.format('End', tag))
-
-    def handle_startendtag(self, tag, attrs):
-        print ('{:6}: {}'.format('Empty', tag))
-        temp = dict(attrs)
-        for k, v in temp.items():
-            print ("-> " + k + " > " + str(v))
-
-MyParser = MyHTMLParser()
-MyParser.feed(''.join([input().strip() for _ in range(int(input()))]))
+# from html.parser import HTMLParser
+#
+# class MyHTMLParser(HTMLParser):
+#     def handle_starttag(self, tag, attrs):
+#         print ('{:6}: {}'.format('Start', tag))
+#         temp = dict(attrs)
+#         for k, v in temp.items():
+#             print ("-> " + k + " > " + str(v))
+#
+#     def handle_endtag(self, tag):
+#         print ('{:6}: {}'.format('End', tag))
+#
+#     def handle_startendtag(self, tag, attrs):
+#         print ('{:6}: {}'.format('Empty', tag))
+#         temp = dict(attrs)
+#         for k, v in temp.items():
+#             print ("-> " + k + " > " + str(v))
+#
+# MyParser = MyHTMLParser()
+# MyParser.feed(''.join([input().strip() for _ in range(int(input()))]))
 
 # for ele in attrs:
 #     print ('->',ele[0],'>',ele[1])
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# html-parser-part-2-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+
+    def handle_data(self, data):
+        if data != '\n':
+            print (">>> Data\n" + data)
+
+    def handle_comment(self, data):
+        if '\n' in data:
+            print('>>> Multi-line Comment\n' + data)
+        else:
+            print (">>> Single-line Comment\n" + data)
+
+html = ""
+for i in range(int(input())):
+    html += input().rstrip()
+    html += '\n'
+
+parser = MyHTMLParser()
+parser.feed(html)
+parser.close()
