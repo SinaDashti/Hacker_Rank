@@ -1148,25 +1148,44 @@
 ################################################################################
                                      #A
 ################################################################################
+# from html.parser import HTMLParser
+#
+# class MyHTMLParser(HTMLParser):
+#
+#     def handle_data(self, data):
+#         if data != '\n':
+#             print (">>> Data\n" + data)
+#
+#     def handle_comment(self, data):
+#         if '\n' in data:
+#             print('>>> Multi-line Comment\n' + data)
+#         else:
+#             print (">>> Single-line Comment\n" + data)
+#
+# html = ""
+# for i in range(int(input())):
+#     html += input().rstrip()
+#     html += '\n'
+#
+# parser = MyHTMLParser()
+# parser.feed(html)
+# parser.close()
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# detect-html-tags-attributes-and-attribute-values-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
 from html.parser import HTMLParser
-
 class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print(tag)
+        [print('-> {} > {}'.format(*attr)) for attr in attrs]
 
-    def handle_data(self, data):
-        if data != '\n':
-            print (">>> Data\n" + data)
-
-    def handle_comment(self, data):
-        if '\n' in data:
-            print('>>> Multi-line Comment\n' + data)
-        else:
-            print (">>> Single-line Comment\n" + data)
-
-html = ""
-for i in range(int(input())):
-    html += input().rstrip()
-    html += '\n'
-
+html = '\n'.join([input() for _ in range(int(input()))])
 parser = MyHTMLParser()
 parser.feed(html)
 parser.close()
