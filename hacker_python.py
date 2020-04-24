@@ -1095,15 +1095,47 @@
 ################################################################################
                                      #A
 ################################################################################
-import re
-reg = re.compile(r"(:|,| +)(#[abcdefABCDEF1234567890]{3}|#[abcdefABCDEF1234567890]{6})\b")
-n = int(input())
-for i in range(n):
-    line  = input()
-    items = reg.findall(line)
-    if items:
-        for item in items:
-            print( item[1] )
+# import re
+# reg = re.compile(r"(:|,| +)(#[abcdefABCDEF1234567890]{3}|#[abcdefABCDEF1234567890]{6})\b")
+# n = int(input())
+# for i in range(n):
+#     line  = input()
+#     items = reg.findall(line)
+#     if items:
+#         for item in items:
+#             print( item[1] )
 
 # (?<=[:\s])#[a-f0-9A-F]{3,}(?!\s)
 # (?<!^)(#(?:[\da-f]{3}){1,2})
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# html-parser-part-1-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+from html.parser import HTMLParser
+
+class MyHTMLParser(HTMLParser):
+    def handle_starttag(self, tag, attrs):
+        print ('{:6}: {}'.format('Start', tag))
+        temp = dict(attrs)
+        for k, v in temp.items():
+            print ("-> " + k + " > " + str(v))
+
+    def handle_endtag(self, tag):
+        print ('{:6}: {}'.format('End', tag))
+
+    def handle_startendtag(self, tag, attrs):
+        print ('{:6}: {}'.format('Empty', tag))
+        temp = dict(attrs)
+        for k, v in temp.items():
+            print ("-> " + k + " > " + str(v))
+
+MyParser = MyHTMLParser()
+MyParser.feed(''.join([input().strip() for _ in range(int(input()))]))
+
+# for ele in attrs:
+#     print ('->',ele[0],'>',ele[1])
