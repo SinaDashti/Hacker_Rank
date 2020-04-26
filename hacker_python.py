@@ -1198,14 +1198,14 @@
 ################################################################################
                                      #A
 ################################################################################
-import re
-for _ in range(int(input())):
-    s = input()
-    print('Valid' if all([re.search(r, s)
-    for r in [r'[A-Za-z0-9]{10}', r'([A-Z].*){2}', r'([0-9].*){3}']])
-    and not re.search(r'(.).*\1', s)
-    else 'Invalid')
-
+# import re
+# for _ in range(int(input())):
+#     s = input()
+#     print('Valid' if all([re.search(r, s)
+#     for r in [r'[A-Za-z0-9]{10}', r'([A-Z].*){2}', r'([0-9].*){3}']])
+#     and not re.search(r'(.).*\1', s)
+#     else 'Invalid')
+################################################################################
 # def is_valid(uid):
 #     has_2_or_more_upper = bool(re.search(r'[A-Z]{2,}', uid))
 #     has_3_or_more_digits = bool(re.search(r'\d{3,}', uid))
@@ -1219,3 +1219,31 @@ for _ in range(int(input())):
 #
 # for _ in range(int(input())):
 #     print is_valid(input())
+################################################################################
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# xml-1-find-the-score-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+import sys
+import xml.etree.ElementTree as etree
+
+def get_attr_number(node):
+    # your code goes here
+    s = 0
+    for child in root.iter():
+        s += len(child.attrib)
+    return s
+
+if __name__ == '__main__':
+    sys.stdin.readline()
+    xml = sys.stdin.read()
+    tree = etree.ElementTree(etree.fromstring(xml))
+    root = tree.getroot()
+    print(get_attr_number(root))
+
+return sum([len(elem.items()) for elem in tree.iter())
