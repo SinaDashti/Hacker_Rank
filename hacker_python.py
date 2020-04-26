@@ -1229,21 +1229,58 @@
 ################################################################################
                                      #A
 ################################################################################
-import sys
+# import sys
+# import xml.etree.ElementTree as etree
+#
+# def get_attr_number(node):
+#     # your code goes here
+#     s = 0
+#     for child in root.iter():
+#         s += len(child.attrib)
+#     return s
+#
+# if __name__ == '__main__':
+#     sys.stdin.readline()
+#     xml = sys.stdin.read()
+#     tree = etree.ElementTree(etree.fromstring(xml))
+#     root = tree.getroot()
+#     print(get_attr_number(root))
+################################################################################
+# return sum([len(elem.items()) for elem in tree.iter())
+################################################################################
+################################################################################
+################################################################################
+                                      #Q
+################################################################################
+# xml2-find-the-maximum-depth-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
 import xml.etree.ElementTree as etree
 
-def get_attr_number(node):
-    # your code goes here
-    s = 0
-    for child in root.iter():
-        s += len(child.attrib)
-    return s
+maxdepth = 0
+def depth(elem, level):
+    global maxdepth
+    if (level == maxdepth):
+        maxdepth += 1
+    # recursive call to function to get the depth
+    for child in elem:
+        depth(child, level + 1)
 
 if __name__ == '__main__':
-    sys.stdin.readline()
-    xml = sys.stdin.read()
+    n = int(input())
+    xml = ""
+    for i in range(n):
+        xml =  xml + input() + "\n"
     tree = etree.ElementTree(etree.fromstring(xml))
-    root = tree.getroot()
-    print(get_attr_number(root))
-
-return sum([len(elem.items()) for elem in tree.iter())
+    depth(tree.getroot(), -1)
+    print(maxdepth)
+################################################################################
+                                      #Q
+################################################################################
+#
+################################################################################
+################################################################################
+                                     #A
+################################################################################
