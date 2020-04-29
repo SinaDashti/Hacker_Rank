@@ -1257,29 +1257,41 @@
 ################################################################################
                                      #A
 ################################################################################
-import xml.etree.ElementTree as etree
-
-maxdepth = 0
-def depth(elem, level):
-    global maxdepth
-    if (level == maxdepth):
-        maxdepth += 1
-    # recursive call to function to get the depth
-    for child in elem:
-        depth(child, level + 1)
-
-if __name__ == '__main__':
-    n = int(input())
-    xml = ""
-    for i in range(n):
-        xml =  xml + input() + "\n"
-    tree = etree.ElementTree(etree.fromstring(xml))
-    depth(tree.getroot(), -1)
-    print(maxdepth)
+# import xml.etree.ElementTree as etree
+#
+# maxdepth = 0
+# def depth(elem, level):
+#     global maxdepth
+#     if (level == maxdepth):
+#         maxdepth += 1
+#     # recursive call to function to get the depth
+#     for child in elem:
+#         depth(child, level + 1)
+#
+# if __name__ == '__main__':
+#     n = int(input())
+#     xml = ""
+#     for i in range(n):
+#         xml =  xml + input() + "\n"
+#     tree = etree.ElementTree(etree.fromstring(xml))
+#     depth(tree.getroot(), -1)
+#     print(maxdepth)
 ################################################################################
                                       #Q
 ################################################################################
-#
+# np-shape-reshape-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+import numpy as np
+print(np.reshape(np.array(list(map(int, input().split()))), (3, 3)))
+print(np.array(input().split(),int).reshape(3,3))
+print (numpy.fromstring(input(), dtype=int, sep=" ").reshape(3,3))
+################################################################################
+                                      #Q
+################################################################################
+# 
 ################################################################################
 ################################################################################
                                      #A
