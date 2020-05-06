@@ -1284,15 +1284,19 @@
 ################################################################################
                                      #A
 ################################################################################
-import numpy as np
-print(np.reshape(np.array(list(map(int, input().split()))), (3, 3)))
-print(np.array(input().split(),int).reshape(3,3))
-print (numpy.fromstring(input(), dtype=int, sep=" ").reshape(3,3))
+# import numpy as np
+# print(np.reshape(np.array(list(map(int, input().split()))), (3, 3)))
+# print(np.array(input().split(),int).reshape(3,3))
+# print (numpy.fromstring(input(), dtype=int, sep=" ").reshape(3,3))
 ################################################################################
                                       #Q
 ################################################################################
-# 
+# np-transpose-and-flatten-English
 ################################################################################
 ################################################################################
                                      #A
 ################################################################################
+import numpy as np
+N, M = map(int,input().split())
+arr = [list(map(int,input().split()[:M])) for r in range(N)]
+print(np.array(arr).transpose() , np.array(arr).flatten() , sep = '\n')
