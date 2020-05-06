@@ -1308,10 +1308,20 @@
 ################################################################################
                                      #A
 ################################################################################
-import numpy as np
-N, M, P = map(int,input().split())
-print(np.array([input().split()[:P] for r in range(N + M)], int))]]
-
-NxP = np.array([input().split()[:P] for _ in range(N)], int)
-MxP = np.array([input().split()[:P] for _ in range(M)], int)
-print(np.concatenate((NxP, MxP), axis = 0))
+# import numpy as np
+# N, M, P = map(int,input().split())
+# print(np.array([input().split()[:P] for _ in range(N + M)], int))]]
+#
+# NxP = np.array([input().split()[:P] for _ in range(N)], int)
+# MxP = np.array([input().split()[:P] for _ in range(M)], int)
+# print(np.concatenate((NxP, MxP), axis = 0))
+################################################################################
+                                      #Q
+################################################################################
+# np-zeros-and-ones-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+nums = tuple(map(int, input().split()))
+print (numpy.zeros(nums, dtype = numpy.int), numpy.ones(nums, dtype = numpy.int), sep = '\n')
