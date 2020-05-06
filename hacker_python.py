@@ -1296,7 +1296,22 @@
 ################################################################################
                                      #A
 ################################################################################
+# import numpy as np
+# N, M = map(int,input().split())
+# arr = [list(map(int,input().split()[:M])) for r in range(N)]
+# print(np.array(arr).transpose() , np.array(arr).flatten() , sep = '\n')
+################################################################################
+                                      #Q
+################################################################################
+# np-concatenate-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
 import numpy as np
-N, M = map(int,input().split())
-arr = [list(map(int,input().split()[:M])) for r in range(N)]
-print(np.array(arr).transpose() , np.array(arr).flatten() , sep = '\n')
+N, M, P = map(int,input().split())
+print(np.array([input().split()[:P] for r in range(N + M)], int))]]
+
+NxP = np.array([input().split()[:P] for _ in range(N)], int)
+MxP = np.array([input().split()[:P] for _ in range(M)], int)
+print(np.concatenate((NxP, MxP), axis = 0))
