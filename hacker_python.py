@@ -1323,5 +1323,18 @@
 ################################################################################
                                      #A
 ################################################################################
-nums = tuple(map(int, input().split()))
-print (numpy.zeros(nums, dtype = numpy.int), numpy.ones(nums, dtype = numpy.int), sep = '\n')
+# nums = tuple(map(int, input().split()))
+# print (numpy.zeros(nums, dtype = numpy.int), numpy.ones(nums, dtype = numpy.int), sep = '\n')
+################################################################################
+                                      #Q
+################################################################################
+# np-array-mathematics-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+import numpy as np
+N, M = map(int,input().split())
+A = np.array([input().split()[:M] for _ in range(N)], int)
+B = np.array([input().split()[:M] for _ in range(N)], int)
+print(A + B, A - B, A * B, A // B, A % B, A ** B, sep = '\n')
