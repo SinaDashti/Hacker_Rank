@@ -1369,16 +1369,21 @@
 ################################################################################
                                      #A
 ################################################################################
-import numpy as np
-np.set_printoptions(legacy='1.13')
-N, M = map(int,input().split())
-NxM = np.array([input().split()[:M] for _ in range(N)], int)
-print(np.mean(NxM, axis = 1), np.var(NxM, axis = 0), np.std(NxM), sep = '\n')
+# import numpy as np
+# np.set_printoptions(legacy='1.13')
+# N, M = map(int,input().split())
+# NxM = np.array([input().split()[:M] for _ in range(N)], int)
+# print(np.mean(NxM, axis = 1), np.var(NxM, axis = 0), np.std(NxM), sep = '\n')
 ################################################################################
                                       #Q
 ################################################################################
-#
+# np-dot-and-cross-English
 ################################################################################
 ################################################################################
                                      #A
 ################################################################################
+import numpy as np
+N = int(input())
+A = np.array([input().split()[:N] for _ in range(N)], int)
+B = np.array([input().split()[:N] for _ in range(N)], int)
+print(A.dot(B)) # print(np.dot(A, B))
