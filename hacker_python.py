@@ -1421,8 +1421,27 @@
 ################################################################################
                                      #A
 ################################################################################
-import numpy as np
-N = int(input())
-A = np.array([input().split() for _ in range(N)], float)
-print(round(np.linalg.det(A), 2))
-# 
+# import numpy as np
+# N = int(input())
+# A = np.array([input().split() for _ in range(N)], float)
+# print(round(np.linalg.det(A), 2))
+################################################################################
+                                      #Q
+################################################################################
+# standardize-mobile-number-using-decorators-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+def wrapper(f):
+    def fun(l):
+        f([f'+91 {i[-10:-5]} {i[-5:]}' for i in l])
+    return fun
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l)
