@@ -1433,15 +1433,46 @@
 ################################################################################
                                      #A
 ################################################################################
-def wrapper(f):
-    def fun(l):
-        f([f'+91 {i[-10:-5]} {i[-5:]}' for i in l])
-    return fun
+# def wrapper(f):
+#     def fun(l):
+#         f([f'+91 {i[-10:-5]} {i[-5:]}' for i in l])
+#     return fun
+#
+# @wrapper
+# def sort_phone(l):
+#     print(*sorted(l), sep='\n')
+#
+# if __name__ == '__main__':
+#     l = [input() for _ in range(int(input()))]
+#     sort_phone(l)
+################################################################################
+                                      #Q
+################################################################################
+# the-minion-game-English
+################################################################################
+################################################################################
+                                     #A
+################################################################################
+def minion_game(string):
 
-@wrapper
-def sort_phone(l):
-    print(*sorted(l), sep='\n')
+    s = string.upper()
+    S, K = 0, 0
+    text_length = len(s)
+
+    for idx, element in enumerate(s):
+        if element[0]  in 'AEIOU':
+            K += text_length - idx
+        else:
+            S += text_length - idx
+
+    if S > K:
+        print('Stuart {}'.format(S))
+    elif S < K:
+        print('Kevin {}'.format(K))
+    elif S == K:
+        print('Draw')
 
 if __name__ == '__main__':
-    l = [input() for _ in range(int(input()))]
-    sort_phone(l)
+    s = input()
+    minion_game(s)
+# https://codereview.stackexchange.com/questions/106238/the-minion-game-challenge
